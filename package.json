@@ -12,6 +12,7 @@
     "serve:ssr": "serverless offline start",
     "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
     "deploy": "serverless deploy",
+    "terminate": "serverless remove",
     "build:client-and-server-bundles": "ng build --prod && ng run angular-serverless-starter:server:production --bundleDependencies all"
   },
   "private": true,
