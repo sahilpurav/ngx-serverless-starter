@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('angular-serverless-starter app is running!');
+    expect(page.getTitleText()).toEqual('ngx-serverless-starter app is running!');
   });
 
   afterEach(async () => {
