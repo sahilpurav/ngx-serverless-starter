@@ -20,7 +20,8 @@ package:
     - "node_modules/media-typer/**"
     - "node_modules/mime-types/**"
     - "node_modules/mime-db/**"
-    - "dist/**"
+    - "dist/ngx-serverless-starter/browser/**"
+    - "dist/ngx-serverless-starter/serverless/**"
     - "lambda.js"
 
 custom:
