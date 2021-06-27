@@ -1,37 +1,21 @@
-service: angular-serverless-starter
-
+service: ngx-serverless-starter
 plugins:
-  - serverless-apigw-binary
   - serverless-offline
-
 provider:
   name: aws
   runtime: nodejs12.x
+  lambdaHashingVersion: 20201221
   memorySize: 192
   timeout: 10
-
 package:
-  exclude:
-    - ./**
-  include:
+  patterns:
+    - "!/**"
     - "node_modules/aws-serverless-express/**"
-    - "node_modules/binary-case/**"
-    - "node_modules/type-is/**"
-    - "node_modules/media-typer/**"
-    - "node_modules/mime-types/**"
-    - "node_modules/mime-db/**"
-    - "dist/ngx-serverless-starter/browser/**"
-    - "dist/ngx-serverless-starter/serverless/**"
+    - "dist/**"
     - "lambda.js"
-
-custom:
-  apigwBinary:
-    types:
-      - "*/*"
-
 functions:
   api:
     handler: lambda.handler
     events:
-      - http: GET {proxy+}
       - http: GET /
+      - http: GET /{proxy+}
