@@ -8,12 +8,14 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "dev:ssr": "ng run ngx-serverless-starter:serve-ssr",
-    "dev:sls": "npm run build:sls && npm run serve:sls",
+    "dev:sls": "ng build -c development && ng run ngx-serverless-starter:serverless -c development && npm run serve:sls",
     "serve:ssr": "node dist/ngx-serverless-starter/server/main.js",
     "serve:sls": "serverless offline start --noPrependStageInUrl",
     "build:ssr": "ng build && ng run ngx-serverless-starter:server",
-    "build:sls": "ng build -c development && ng run ngx-serverless-starter:serverless -c development",
-    "prerender": "ng run ngx-serverless-starter:prerender"
+    "build:sls": "ng build && ng run ngx-serverless-starter:serverless",
+    "prerender": "ng run ngx-serverless-starter:prerender",
+    "deploy": "serverless deploy",
+    "terminate": "serverless remove"
   },
   "private": true,
   "dependencies": {

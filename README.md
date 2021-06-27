@@ -1,27 +1,53 @@
-# NgxServerlessStarter
+# Angular 12.x Serverless Starter
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.0.
+This starter is intended for those who wish to run their application on AWS lambda with serverless framework.
 
-## Development server
+It is super easy and done with 100% adherance to all the recommendations by Angular and Serverless community.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+# How to use?
 
-## Code scaffolding
+## Project naming
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Starter comes up with it's own name, "ngx-serverless-starter". I'm sure this will not be the name for all of your project and you intend to change it with your project name. Follow this guide.
 
-## Build
+- You need to clone this repository.
+- Find & replace the word "ngx-serverless-starter" with your project name.
+- Update your root folder name.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Running application
+Application has three major build types:
 
-## Running unit tests
+- Non SSR
+- SSR
+- Serverless
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Non SSR
 
-## Running end-to-end tests
+It is regular build without Angular Universal in picture.Use it for your day to day development since it is fairly fast as compared to SSR or serverless.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+**Command**:
+- `ng serve` - For local development build
+- `ng build` - For production build
 
-## Further help
+### SSR
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+This is Angular Universal build without Serverless framework.
+
+**Command**:
+- `npm run dev:ssr` - For local development build
+- `npm run build:ssr` - For production build
+
+### Serverless
+
+This is Angular Universal build with Serverless framework.
+
+**Command**:
+- `aws configure` - Configuring your AWS access keys
+- `npm run dev:sls` - For local development build
+- `npm run build:sls` - For production build
+- `npm run deploy` - For deploying on serverless
+- `npm run terminate` - For terminating infrastructure resources on AWS.
+
+
+> For more information about this starter, head on to the article:
+https://medium.com/cactus-techblog/deploy-angular-universal-on-aws-lambda-from-scratch-1b169289eac2
