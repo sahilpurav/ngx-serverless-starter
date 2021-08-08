@@ -10,7 +10,7 @@ provider:
 package:
   patterns:
     - "!/**"
-    - "node_modules/aws-serverless-express/**"
+    - "node_modules/@vendia/serverless-express/**"
     - "dist/**"
     - "lambda.js"
 functions:
