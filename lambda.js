@@ -1,5 +1,11 @@
 const serverlessExpress = require("@vendia/serverless-express");
-const app = require("./dist/ngx-serverless-starter/serverless/main");
+const app = require("./dist/ngx-serverless-starter/serverless/main").server;
 
-const serverProxy = serverlessExpress.createServer(app.server);
-module.exports.handler = (event, context) => serverlessExpress.proxy(serverProxy, event, context);
+module.exports.handler = serverlessExpress({
+  app,
+  binarySettings: {
+    isBinary: ({ headers }) => true,
+    contentTypes: [],
+    contentEncodings: [],
+  },
+});
