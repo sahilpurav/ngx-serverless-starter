@@ -30,6 +30,7 @@ server.get('*.*', express.static(distFolder, {
 
 // All regular routes use the Universal engine
 server.get('*', (req, res) => {
+  res.header('Content-Type', 'text/html');
   res.render(indexHtml, { req, providers: [{ provide: APP_BASE_HREF, useValue: req.baseUrl }] });
 });
 
